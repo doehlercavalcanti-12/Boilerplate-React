@@ -1,0 +1,61 @@
+{
+  "name": "boilerplate-react",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "config": "node scripts/configure.mjs",
+    "prepare": "husky",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:report": "eslint \"src/**/*.{ts,tsx}\" -f json --output-file reports/lint.json && node scripts/eslint-report.mjs reports/lint.json reports/lint.md",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage --coverageReporters=json-summary --coverageReporters=text --coverageReporters=text-summary",
+    "playwright": "npm run build && playwright test",
+    "security": "eslint \"src/**/*.{ts,tsx}\" --config .eslintrc.security.cjs",
+    "security:report": "eslint \"src/**/*.{ts,tsx}\" --config .eslintrc.security.cjs -f json --output-file reports/security.json && node scripts/eslint-report.mjs reports/security.json reports/security.md",
+    "coverage:report": "npm run test:coverage && node scripts/coverage-report.mjs"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@playwright/test": "^1.41.2",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.7.1",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "playwright": "^1.41.2",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "tsc --noEmit"
+    ]
+  }
+}
