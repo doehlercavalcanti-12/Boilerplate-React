@@ -55,7 +55,7 @@
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
       "eslint --fix",
-      "tsc --noEmit"
+      "tsc --noEmit --project tsconfig.json"
     ]
   }
 }
