@@ -7,7 +7,7 @@
 
 ## Total Coverage
 
-- Statements: 40%
+- Statements: 44.44%
 - Branches: 0%
 - Functions: 100%
-- Lines: 40%
+- Lines: 44.44%
